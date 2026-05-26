@@ -16,7 +16,5 @@ jobs:
           arch: arm64
           android-version: 14
           ksu: true
-          ksu-other: true
-          ksu-url: https://github.com/resukiii/resukiSU
           anykernel3: true
           
