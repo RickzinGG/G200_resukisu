@@ -12,13 +12,14 @@ jobs:
         with:
           repository: LineageOS/android_kernel_motorola_sm7325
           ref: lineage-22.1
-          path: kernel/kernel
+          path: android_kernel_motorola_sm7325 # Baixa direto na pasta padrão que a Action espera
           submodules: false
 
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: local
+          kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
+          kernel-branch: lineage-22.1
           config: vendor/starfox_defconfig
           arch: arm64
           android-version: 14
