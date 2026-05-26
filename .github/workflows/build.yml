@@ -1,17 +1,22 @@
-name: Missao Reconhecimento G200
+name: Compilar Kernel Moto G200
 
 on:
   workflow_dispatch:
 
 jobs:
-  investigar:
+  build-kernel:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar o Repositorio da LineageOS
-        run: git clone --depth 1 -b lineage-22.1 https://github.com/LineageOS/android_kernel_motorola_sm7325.git kernel
-
-      - name: 🕵️ Descobrir Nome do Arquivo
-        run: |
-          echo "=== PROCURANDO TODOS OS ARQUIVOS DEFCONFIG ==="
-          find kernel/arch/arm64/configs/ -type f -name "*defconfig*"
+      - name: Compilar com Dabao Action
+        uses: dabao1955/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
+          kernel-branch: lineage-22.1
+          config: vendor/lahaina-qgki_defconfig
+          arch: arm64
+          android-version: 14
+          ksu: true
+          ksu-other: true
+          ksu-url: https://github.com/resukiii/resukiSU
+          anykernel3: true
           
