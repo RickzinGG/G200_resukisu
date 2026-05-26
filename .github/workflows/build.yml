@@ -9,12 +9,17 @@ jobs:
     steps:
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
+        env:
+          headers_check: 0
+          NO_HEADERS_CHECK: 1
         with:
           kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
           kernel-branch: lineage-22.1
           config: vendor/lahaina-qgki_defconfig
           arch: arm64
-          android-version: 15 # Atualizado para alinhar perfeitamente com o motor da branch lineage-22.1!
+          android-version: 13
           ksu: true
+          ksu-other: true
+          ksu-url: https://github.com/ReSukiSU/ReSukiSU
           anykernel3: true
           
