@@ -5,13 +5,10 @@ on:
 
 jobs:
   build-kernel:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Força o uso do Ubuntu 22.04 para garantir compatibilidade com os scripts do Kernel 5.4
     steps:
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
-        env:
-          headers_check: 0
-          NO_HEADERS_CHECK: 1
         with:
           kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
           kernel-branch: lineage-22.1
