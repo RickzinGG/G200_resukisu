@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Compilar com Dabao Action
-        uses: dabao1955/kernel_build_action@v1
+        uses: dabao1955/kernel_build_action@main
         with:
           kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm8350
           kernel-branch: lineage-20
