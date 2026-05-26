@@ -7,11 +7,11 @@ jobs:
   build-kernel:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar Source do Kernel Manualmente
+      - name: Clonar Source do Kernel Unificado
         uses: actions/checkout@v4
         with:
-          repository: AxionOS-Devices/android_kernel_motorola_sm8350
-          ref: 14
+          repository: LineageOS/android_kernel_motorola_sm7325
+          ref: lineage-22.1
           path: kernel/kernel
           submodules: false
 
