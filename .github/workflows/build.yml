@@ -7,11 +7,19 @@ jobs:
   build-kernel:
     runs-on: ubuntu-latest
     steps:
+      - name: Clonar Source do Kernel Manualmente
+        uses: actions/checkout@v4
+        with:
+          repository: AOSP-Extensions/android_kernel_motorola_sm8350
+          ref: fourteen
+          path: kernel/kernel
+          submodules: false # Evita o bug dos submódulos pedindo senha
+
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: https://github.com/AOSP-Extensions/android_kernel_motorola_sm8350
-          kernel-branch: fourteen
+          # Deixamos em branco para a action usar a pasta que já clonamos acima
+          kernel-url: local
           config: vendor/starfox_defconfig
           arch: arm64
           android-version: 14
