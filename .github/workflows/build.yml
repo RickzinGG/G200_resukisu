@@ -7,20 +7,12 @@ jobs:
   build-kernel:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar Source do Kernel Unificado
-        uses: actions/checkout@v4
-        with:
-          repository: LineageOS/android_kernel_motorola_sm7325
-          ref: lineage-22.1
-          path: android_kernel_motorola_sm7325
-          submodules: false
-
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
         with:
           kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
           kernel-branch: lineage-22.1
-          config: starfox_defconfig # Tiramos o vendor/ para ele buscar na pasta raiz de configs
+          config: vendor/xpeng_defconfig # Corrigido para o codenome real do seu celular!
           arch: arm64
           android-version: 14
           ksu: true
