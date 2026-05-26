@@ -10,15 +10,14 @@ jobs:
       - name: Clonar Source do Kernel Manualmente
         uses: actions/checkout@v4
         with:
-          repository: AOSP-Extensions/android_kernel_motorola_sm8350
-          ref: fourteen
+          repository: SonalSingh18/android_kernel_motorola_sm8350
+          ref: 14
           path: kernel/kernel
-          submodules: false # Evita o bug dos submódulos pedindo senha
+          submodules: false
 
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
         with:
-          # Deixamos em branco para a action usar a pasta que já clonamos acima
           kernel-url: local
           config: vendor/starfox_defconfig
           arch: arm64
