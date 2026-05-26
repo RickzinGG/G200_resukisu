@@ -12,7 +12,7 @@ jobs:
         with:
           kernel-url: https://github.com/LineageOS/android_kernel_motorola_sm7325
           kernel-branch: lineage-22.1
-          config: vendor/xpeng_defconfig # Corrigido para o codenome real do seu celular!
+          config: xpeng_defconfig # Tiramos o vendor/ para ele buscar direto na pasta principal de configs
           arch: arm64
           android-version: 14
           ksu: true
