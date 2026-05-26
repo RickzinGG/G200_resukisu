@@ -10,8 +10,8 @@ jobs:
       - name: Compilar com Dabao Action
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: https://github.com/P-A-N-D-A-O/android_kernel_motorola_sm8350
-          kernel-branch: 14
+          kernel-url: https://github.com/AOSP-Extensions/android_kernel_motorola_sm8350
+          kernel-branch: fourteen
           config: vendor/starfox_defconfig
           arch: arm64
           android-version: 14
