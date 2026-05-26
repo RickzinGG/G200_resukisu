@@ -14,7 +14,7 @@ jobs:
           kernel-branch: lineage-22.1
           config: vendor/lahaina-qgki_defconfig
           arch: arm64
-          android-version: 14
+          android-version: 15 # Atualizado para alinhar perfeitamente com o motor da branch lineage-22.1!
           ksu: true
           anykernel3: true
           
